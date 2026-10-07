@@ -425,24 +425,100 @@
   <div class="summary-grid">
     <div class="summary-card">
       <div class="label">採用ツール</div>
-      <div class="value">MS公式の安全移行ツール</div>
+      <div class="value">Microsoft公式の移行ツール【Migration Manager】</div>
     </div>
     <div class="summary-card">
-      <div class="label">安全への配慮</div>
-      <div class="value">ぶっつけ本番なし（事前スキャン）</div>
+      <div class="label">安全対策</div>
+      <div class="value">事前スキャンで調査後に移行を実施</div>
     </div>
     <div class="summary-card">
-      <div class="label">データ最新化</div>
-      <div class="value">差分も考慮済み（漏れなく同期）</div>
+      <div class="label">差分データ</div>
+      <div class="value">移行中の差分も同期可能</div>
     </div>
     <div class="summary-card">
       <div class="label">業務への影響</div>
-      <div class="value">通常業務の停止ゼロ（完全ノーストップ）</div>
+      <div class="value">通常業務の停止ゼロを想定</div>
     </div>
   </div>
 
   <main class="content">
 
+    <!-- ▼ ここから：主要ツール・用語解説エリア ▼ -->
+<section style="margin-bottom: 40px;">
+  <h2 class="section-title">💡 まずはじめに：登場する主要ツールの役割</h2>
+  <p style="font-size: 14px; margin-bottom: 20px; color: #605e5c;">
+    今回のデータ移行プロジェクトで登場する主要なクラウドサービスとツールの位置づけです。
+  </p>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+
+    <!-- Microsoft 365 -->
+    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--primary); box-shadow: var(--shadow-sm);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">Microsoft 365</span>
+        <span style="background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">総合プラットフォーム</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
+        WordやExcelなどのOfficeアプリに加え、SharePointやOneDrive、Teamsなどを統合した業務クラウドサービス群です。
+      </p>
+    </div>
+
+    <!-- Migration Manager -->
+    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--accent-purple); box-shadow: var(--shadow-sm);">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">Migration Manager</span>
+        <span style="background: var(--accent-purple-bg); color: var(--accent-purple); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">公式移行ツール</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
+        DropboxからSharePointへのデータ移行に使用するMicrosoft公式ツールです。
+      </p>
+    </div>
+  </div>
+
+  <!-- DropboxからSharePointへの移行ルート -->
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; align-items: center; margin-top: 20px;">
+
+    <!-- 移行元：Dropbox -->
+    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid #0061ff; box-shadow: var(--shadow-sm);">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">📦 Dropbox</span>
+        <span style="background: #e5f0ff; color: #0052cc; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">移行元（現在）</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
+        現在利用中のクラウドストレージです。保存されているデータをSharePointへ移行します。
+      </p>
+    </div>
+
+    <!-- 矢印 -->
+    <div style="text-align: center; color: var(--primary);">
+      <div style="font-size: 12px; font-weight: bold; white-space: nowrap;">Migration Managerで移行</div>
+      <div aria-hidden="true" style="font-size: 36px; line-height: 1.2;">→</div>
+    </div>
+
+    <!-- 移行先：SharePoint -->
+    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--accent-green); box-shadow: var(--shadow-sm);">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">📦 SharePoint</span>
+        <span style="background: var(--accent-green-bg); color: var(--accent-green); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">移行先（チーム共有）</span>
+      </div>
+      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
+        社内・チームでファイルを共有する移行先です。権限を管理し、安全にデータを共有できます。
+      </p>
+    </div>
+  </div>
+
+  <!-- OneDrive -->
+  <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid #00a4ef; box-shadow: var(--shadow-sm); margin-top: 16px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+      <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">📦 OneDrive</span>
+      <span style="background: #e6f7ff; color: #0078d4; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">個人領域・PC同期</span>
+    </div>
+    <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
+      個人用のクラウド保管庫です。SharePointのファイルをPCと同期する際にも利用します。
+    </p>
+  </div>
+</section>
+    
     <!-- 1. SharePoint運用可能性チェック -->
     <section>
       <h2 class="section-title">1. SharePointでの今後の運用可能性チェック（事前確認）</h2>
@@ -770,64 +846,67 @@
 
 <!-- 新しいタブで独立した「SharePoint使い方ガイド」ページを開くJavaScript機能 -->
 <script>
-  function openSharePointGuide() {
-    const guideWindow = window.open("", "_blank");
-    guideWindow.document.write(`
-      <!DOCTYPE html>
-      <html lang="ja">
-      <head>
-        <meta charset="UTF-8">
-        <title>【ガイド】SharePointの使い方マニュアル</title>
-        <style>
-          body { font-family: -apple-system, sans-serif; line-height: 1.6; color: #323130; background: #f0f2f5; padding: 30px; margin: 0; }
-          .container { max-width: 850px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
-          h1 { color: #0078d4; border-bottom: 3px solid #0078d4; padding-bottom: 10px; font-size: 24px; }
-          .intro { background: #eff6fc; border-left: 4px solid #0078d4; padding: 15px; margin: 20px 0; font-size: 14px; }
-          .card { background: #faf9f8; border: 1px solid #e1dfdd; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
-          .mockup { background: #fff; border: 1px solid #e1dfdd; padding: 15px; border-radius: 4px; margin: 15px 0; }
-          .mockup-bar { background: #f3f2f1; padding: 6px 10px; font-size: 12px; font-weight: bold; color: #605e5c; margin-bottom: 8px; }
-          .tree { font-size: 13px; padding: 4px 0; border-bottom: 1px solid #f3f2f1; }
-          .btn-close { background: #0078d4; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <h1>📘 SharePointの基本使い方ガイド</h1>
-          
-          <div class="intro">
-            <b>💡 ご安心ください：これまでのDropboxと全く同じ感覚で使えます！</b><br>
-            SharePointへ移行した後も、PCのエクスプローラー（Finder）上にフォルダが表示されるため、操作に迷うことはありません。
-          </div>
+function openSharePointGuide() {
+  const guideWindow = window.open("", "_blank");
 
-          <h2>1. PCのエクスプローラー（Finder）で使う（一番おすすめ）</h2>
-          <div class="card">
-            <p>いつものパソコン画面（エクスプローラー）から、通常通りファイルを開いて編集・保存できます。</p>
-            <div class="mockup">
-              <div class="mockup-bar">📁 エクスプローラー画面イメージ（最新の状態 ☁️）</div>
-              <div class="tree">🏢 <b>SharePoint - 共有フォルダ</b></div>
-              <div class="tree" style="padding-left: 20px;">📁 01_営業関連資料 <span style="color: #107c41;">✔ 同期完了</span></div>
-              <div class="tree" style="padding-left: 20px;">📁 02_プロジェクト_2026 <span style="color: #107c41;">✔ 同期完了</span></div>
-              <div class="tree" style="padding-left: 40px;">📄 企画提案書_v1.xlsx <span style="color: #107c41;">✔ 同期完了</span></div>
-            </div>
-            <ul>
-              <li>PC左側の「SharePoint」アイコンを開くだけでアクセス可能です。</li>
-              <li>ファイルをダブルクリックすると自動的に開いて直接保存できます。</li>
-            </ul>
-          </div>
-
-          <h2>2. Webブラウザからアクセスして使う</h2>
-          <div class="card">
-            <p>Office 365ポータル（https://office.com）からアクセスすると、ブラウザ上でリアルタイムに複数人で同時編集が可能です。</p>
-          </div>
-
-          <div style="text-align: center; margin-top: 30px;">
-            <button class="btn-close" onclick="window.close()">画面を閉じる</button>
-          </div>
-        </div>
-      </body>
-      </html>
-    `);
+  if (!guideWindow) {
+    alert("ガイドを開けませんでした。ブラウザーのポップアップを許可してください。");
+    return;
   }
+
+  guideWindow.document.open();
+  guideWindow.document.write(`<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SharePointの基本使い方ガイド</title>
+  <style>
+    body {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      font-family: "Meiryo", sans-serif;
+      line-height: 1.8;
+      color: #323130;
+    }
+    h1, h2 { color: #004578; }
+    section {
+      margin: 24px 0;
+      padding: 20px;
+      background: #f3f8fc;
+      border-left: 4px solid #0078d4;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1>SharePointの基本使い方ガイド</h1>
+  <p>SharePointでチームのファイルを確認・共有する基本手順です。</p>
+
+  <section>
+    <h2>1. ファイルを開く</h2>
+    <p>案内されたSharePointサイトを開き、「ドキュメント」などのライブラリから目的のファイルを選びます。</p>
+  </section>
+
+  <section>
+    <h2>2. ファイルを共有する</h2>
+    <p>ファイルの「共有」から共有相手を指定します。共有前に、相手とアクセス権限が正しいことを確認してください。</p>
+  </section>
+
+  <section>
+    <h2>3. PCと同期する</h2>
+    <p>SharePointのドキュメント画面で「同期」を選ぶと、OneDriveアプリを通じてPCのエクスプローラーからファイルを扱えます。</p>
+  </section>
+
+  <section>
+    <h2>4. 困ったとき</h2>
+    <p>ファイルが見つからない、開けない場合は、サイトへのアクセス権限やOneDriveの同期状態を確認し、管理者にお問い合わせください。</p>
+  </section>
+</body>
+</html>`);
+  guideWindow.document.close();
+}
 </script>
 
 </body>
