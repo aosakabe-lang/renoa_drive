@@ -16,13 +16,11 @@
       --accent-red: #d13438;
       --accent-orange: #d83b01;
       --accent-orange-bg: #fde7e9;
-      --weekend-bg: #fff9e6;
       --gray-10: #faf9f8;
       --gray-20: #f3f2f1;
       --gray-30: #e1dfdd;
       --gray-100: #323130;
       --gray-130: #201f1e;
-      --dropbox-blue: #0061ff;
       --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
       --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
       --radius-sm: 6px;
@@ -48,7 +46,6 @@
       overflow: hidden;
     }
 
-    /* ヘッダー・ヒーロー */
     .hero {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
       color: #ffffff;
@@ -68,7 +65,6 @@
 
     .hero h1 { font-size: 28px; font-weight: 700; margin-bottom: 10px; }
 
-    /* サマリーダッシュボード */
     .summary-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -89,7 +85,6 @@
     .summary-card .label { font-size: 12px; color: #605e5c; font-weight: 600; }
     .summary-card .value { font-size: 15px; font-weight: 700; color: var(--primary-dark); margin-top: 4px; }
 
-    /* コンテンツ */
     .content { padding: 40px; }
     section { margin-bottom: 45px; }
 
@@ -130,7 +125,6 @@
     .feature-card h3 { font-size: 16px; color: var(--primary-dark); margin-bottom: 8px; }
     .feature-card p { font-size: 14px; color: var(--gray-100); }
 
-    /* ガイドページ表示ボタン */
     .btn-guide {
       display: inline-flex;
       align-items: center;
@@ -150,7 +144,6 @@
 
     .btn-guide:hover { background: var(--primary-dark); transform: translateY(-1px); }
 
-    /* ロードマップ・カード */
     .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 25px; }
     .timeline-card { border-radius: var(--radius-sm); padding: 24px; border: 1px solid var(--gray-30); }
     .timeline-card.p1 { background: var(--primary-light); border-top: 4px solid var(--primary); }
@@ -168,7 +161,6 @@
     .timeline-card li { font-size: 14px; position: relative; padding-left: 18px; margin-bottom: 8px; }
     .timeline-card li::before { content: "✓"; position: absolute; left: 0; font-weight: bold; }
 
-    /* 環境指定用タグラベル */
     .env-tag {
       display: inline-block;
       padding: 2px 8px;
@@ -179,12 +171,8 @@
       vertical-align: middle;
     }
     .env-tag.dropbox { background-color: #e5f0ff; color: #0052cc; border: 1px solid #b3d4ff; }
-    .env-tag.sharepoint {
-      background-color: #dff6dd; /* 薄い緑 */
-      color: #107c41;            /* 濃い緑の文字 */
-      border: 1px solid #92e096; /* 緑の枠線 */
-    }
-    /* ガントチャート風スケジュール */
+    .env-tag.sharepoint { background-color: #dff6dd; color: #107c41; border: 1px solid #92e096; }
+
     .gantt-container {
       background: var(--gray-10);
       border: 1px solid var(--gray-30);
@@ -223,9 +211,6 @@
     .gantt-table th:last-child, .gantt-table td:last-child { border-right: none; }
     .gantt-table th { background: var(--gray-20); color: var(--gray-130); font-weight: bold; }
 
-    .weekend-header { background: #fce8bd !important; color: #8a3b00 !important; }
-    .weekend-cell { background: var(--weekend-bg); }
-
     .gantt-bar-wrapper {
       background: #ffffff;
       border-radius: 10px;
@@ -253,8 +238,7 @@
     .gantt-bar.b2 { background: var(--accent-green); }
     .gantt-bar.b3 { background: var(--accent-purple); }
 
-    /* 金曜午後スタート運用構想ボックス */
-    .friday-plan-box {
+    .plan-box {
       background: #ffffff;
       border: 1.5px solid var(--primary);
       border-radius: var(--radius-sm);
@@ -263,7 +247,7 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .friday-plan-header {
+    .plan-header {
       font-size: 16px;
       font-weight: bold;
       color: var(--primary-dark);
@@ -273,39 +257,6 @@
       gap: 8px;
     }
 
-    .friday-timeline {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin: 15px 0 25px 0;
-    }
-
-    .friday-step {
-      background: var(--gray-10);
-      border: 1px solid var(--gray-30);
-      border-radius: var(--radius-sm);
-      padding: 14px;
-    }
-
-    .friday-step-time {
-      font-size: 12px;
-      font-weight: bold;
-      color: var(--primary);
-      margin-bottom: 4px;
-    }
-
-    .friday-step-title {
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-
-    .friday-step-desc {
-      font-size: 12.5px;
-      color: #605e5c;
-    }
-
-    /* 時間目安テーブル */
     .time-table {
       width: 100%;
       border-collapse: collapse;
@@ -321,24 +272,12 @@
 
     .time-table th { background: var(--gray-20); font-weight: bold; }
 
-    /* ステップリスト */
     .step-list { display: flex; flex-direction: column; gap: 15px; }
     .step-item { display: flex; gap: 20px; background: var(--gray-10); border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 18px 20px; align-items: center; }
 
     .step-num { width: 42px; height: 42px; min-width: 42px; background: var(--primary); color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; }
     .step-body { flex-grow: 1; }
     .step-body h4 { font-size: 16px; margin-bottom: 4px; }
-
-    /* ガイドライン詳細ボックス */
-    .guideline-detail {
-      background: var(--gray-10);
-      border: 1px solid var(--gray-30);
-      border-radius: var(--radius-sm);
-      padding: 25px;
-      margin-bottom: 25px;
-    }
-
-    .guideline-section-title { font-size: 16px; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px; }
 
     .notice-box {
       background: var(--primary-light);
@@ -350,7 +289,6 @@
       line-height: 1.5;
     }
 
-    /* アコーディオン */
     details.accordion-item {
       background: #ffffff;
       border: 1.5px solid var(--primary);
@@ -379,7 +317,6 @@
 
     .accordion-content { padding: 20px; border-top: 1px solid var(--gray-30); background: var(--gray-10); }
 
-    /* 強調タグ */
     .ng-symbol {
       display: inline-block;
       background-color: var(--accent-red);
@@ -425,100 +362,74 @@
   <div class="summary-grid">
     <div class="summary-card">
       <div class="label">採用ツール</div>
-      <div class="value">Microsoft公式の移行ツール【Migration Manager】</div>
+      <div class="value">Microsoft公式の移行ツール</div>
     </div>
     <div class="summary-card">
-      <div class="label">安全対策</div>
-      <div class="value">事前スキャンで調査後に移行を実施</div>
+      <div class="label">安全への配慮</div>
+      <div class="value">事前スキャンでリスクを最小限に</div>
     </div>
     <div class="summary-card">
-      <div class="label">差分データ</div>
-      <div class="value">移行中の差分も同期可能</div>
+      <div class="label">データ最新化</div>
+      <div class="value">差分同期可能</div>
     </div>
     <div class="summary-card">
       <div class="label">業務への影響</div>
-      <div class="value">通常業務の停止ゼロを想定</div>
+      <div class="value">通常業務の停止ゼロ</div>
     </div>
   </div>
 
   <main class="content">
 
-    <!-- ▼ ここから：主要ツール・用語解説エリア ▼ -->
-<section style="margin-bottom: 40px;">
-  <h2 class="section-title">💡 まずはじめに：登場する主要ツールの役割</h2>
-  <p style="font-size: 14px; margin-bottom: 20px; color: #605e5c;">
-    今回のデータ移行プロジェクトで登場する主要なクラウドサービスとツールの位置づけです。
-  </p>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
-
-    <!-- Microsoft 365 -->
-    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--primary); box-shadow: var(--shadow-sm);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">Microsoft 365</span>
-        <span style="background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">総合プラットフォーム</span>
-      </div>
-      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
-        WordやExcelなどのOfficeアプリに加え、SharePointやOneDrive、Teamsなどを統合した業務クラウドサービス群です。
+    <!-- 💡 主要ツールの役割解説 -->
+    <section>
+      <h2 class="section-title">💡 まずはじめに：登場する主要ツールの役割</h2>
+      <p style="font-size: 14px; margin-bottom: 20px; color: #605e5c;">
+        今回のデータ移行プロジェクトで登場する主要なクラウドサービスとツールの位置づけです。
       </p>
-    </div>
 
-    <!-- Migration Manager -->
-    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--accent-purple); box-shadow: var(--shadow-sm);">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">Migration Manager</span>
-        <span style="background: var(--accent-purple-bg); color: var(--accent-purple); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">公式移行ツール</span>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid #0061ff; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">Dropbox</span>
+            <span style="background: #e5f0ff; color: #0052cc; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">移行元（現在）</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">現在利用中のクラウドストレージです。格納されているデータを新しい環境へ安全に引っ越しします。</p>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--primary); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">Microsoft 365</span>
+            <span style="background: var(--primary-light); color: var(--primary-dark); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">総合環境</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">Officeアプリ（Excel, Word等）やSharePoint、Teamsを統合したMicrosoftのクラウドサービス基盤です。</p>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--accent-green); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">SharePoint</span>
+            <span style="background: var(--accent-green-bg); color: var(--accent-green); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">移行先（チーム共有）</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;"><b>チーム全体の共有フォルダ（サイト）</b>です。安全なアクセス制御のもと、同時編集やファイル管理が行えます。</p>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid #00a4ef; box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">OneDrive</span>
+            <span style="background: #e6f7ff; color: #0078d4; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">個人領域 ＆ 同期</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">個人作業フォルダ機能に加え、SharePointのフォルダをPCのエクスプローラー（Finder）に<b>同期表示するアプリ</b>です。</p>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--accent-purple); box-shadow: var(--shadow-sm);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">Migration Manager</span>
+            <span style="background: var(--accent-purple-bg); color: var(--accent-purple); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">公式移行ツール</span>
+          </div>
+          <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">DropboxからSharePointへ全自動転送を行う<b>Microsoft公式ツール</b>です。バックグラウンドで安全にコピーを行います。</p>
+        </div>
       </div>
-      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
-        DropboxからSharePointへのデータ移行に使用するMicrosoft公式ツールです。
-      </p>
-    </div>
-  </div>
+    </section>
 
-  <!-- DropboxからSharePointへの移行ルート -->
-  <div style="display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 16px; align-items: center; margin-top: 20px;">
-
-    <!-- 移行元：Dropbox -->
-    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid #0061ff; box-shadow: var(--shadow-sm);">
-      <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
-        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">📦 Dropbox</span>
-        <span style="background: #e5f0ff; color: #0052cc; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">移行元（現在）</span>
-      </div>
-      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
-        現在利用中のクラウドストレージです。保存されているデータをSharePointへ移行します。
-      </p>
-    </div>
-
-    <!-- 矢印 -->
-    <div style="text-align: center; color: var(--primary);">
-      <div style="font-size: 12px; font-weight: bold; white-space: nowrap;">Migration Managerで移行</div>
-      <div aria-hidden="true" style="font-size: 36px; line-height: 1.2;">→</div>
-    </div>
-
-    <!-- 移行先：SharePoint -->
-    <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid var(--accent-green); box-shadow: var(--shadow-sm);">
-      <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
-        <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">📦 SharePoint</span>
-        <span style="background: var(--accent-green-bg); color: var(--accent-green); font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">移行先（チーム共有）</span>
-      </div>
-      <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
-        社内・チームでファイルを共有する移行先です。権限を管理し、安全にデータを共有できます。
-      </p>
-    </div>
-  </div>
-
-  <!-- OneDrive -->
-  <div style="background: #ffffff; border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 20px; border-left: 5px solid #00a4ef; box-shadow: var(--shadow-sm); margin-top: 16px;">
-    <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
-      <span style="font-size: 16px; font-weight: bold; color: var(--gray-130);">📦 OneDrive</span>
-      <span style="background: #e6f7ff; color: #0078d4; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 4px;">個人領域・PC同期</span>
-    </div>
-    <p style="font-size: 13.5px; color: var(--gray-100); line-height: 1.5;">
-      個人用のクラウド保管庫です。SharePointのファイルをPCと同期する際にも利用します。
-    </p>
-  </div>
-</section>
-    
     <!-- 1. SharePoint運用可能性チェック -->
     <section>
       <h2 class="section-title">1. SharePointでの今後の運用可能性チェック（事前確認）</h2>
@@ -539,7 +450,7 @@
         </div>
         <div class="feature-card">
           <h3>📘 使い方マニュアルの整備</h3>
-          <p>移行後に迷わず操作できるよう、SharePointの基本操作（閲覧・編集・同期）ガイドを用意します。</p>
+          <p>移行後に迷わず操作できるよう、SharePointの基本操作（ブラウザ共有・同時編集・同期）ガイドを用意します。</p>
         </div>
       </div>
 
@@ -573,13 +484,13 @@
 
     <!-- 3. ロードマップ ＆ ガントチャート -->
     <section>
-      <h2 class="section-title">3. フェーズ別ロードマップ ＆ スケジュール（モデル案）</h2>
+      <h2 class="section-title">3. フェーズ別ロードマップ ＆ スケジュールモデル</h2>
       
       <div class="timeline">
         <div class="timeline-card p1">
           <span class="phase-badge">Phase 01</span>
           <h3>事前準備・事前スキャン</h3>
-          <div class="duration">月〜木曜に実行 / 業務影響なし</div>
+          <div class="duration">いつでも実行可能 / 業務影響なし</div>
           <ul>
             <li>SharePoint運用可能性の検証</li>
             <li>Migration Manager 接続設定</li>
@@ -590,19 +501,19 @@
 
         <div class="timeline-card p2">
           <span class="phase-badge">Phase 02</span>
-          <h3>一括転送（金曜午後スタート / 約4日間～）</h3>
-          <div class="duration">金曜午後〜自動完了 / 作業不要</div>
+          <h3>一括転送（準備でき次第スタート）</h3>
+          <div class="duration">クラウド間自動転送 / ノーストップ</div>
           <ul>
-            <li>金曜午後にデータの初回一括転送を開始</li>
-            <li>約4日間～2週間で全自動完了</li>
-            <li>PCの起動や人の待機は一切不要</li>
+            <li>準備ができ次第、データの一括転送を開始</li>
+            <li>データ量に応じて自動で通信完了</li>
+            <li>業務時間中の実行もPC・回線に影響ゼロ</li>
           </ul>
         </div>
 
         <div class="timeline-card p3">
           <span class="phase-badge">Phase 03</span>
           <h3>差分同期・本番運用開始</h3>
-          <div class="duration">終わり次第〜運用スタート</div>
+          <div class="duration">転送完了〜運用スタート</div>
           <ul>
             <li>最終の差分データ自動同期（最新化）</li>
             <li><span class="env-tag sharepoint">SharePoint</span>への完全切り替え完了</li>
@@ -611,24 +522,22 @@
         </div>
       </div>
 
-      <!-- 金曜午後スタート版ガントチャート（金曜午後〜約4日間～2週間で一括コピー想定） -->
+      <!-- プロセスベース版ガントチャート -->
       <div class="gantt-container">
         <div class="gantt-header-title">
-          <span>📊 スケジュールモデル案（金曜午後スタート／一括コピー約4日間～）</span>
-          <span style="font-size: 12px; font-weight: normal; color: #605e5c;">※金曜午後〜一括コピーを自動完了させるモデル</span>
+          <span>📊 スケジュールモデル案（ノーストップ自動一括コピー）</span>
+          <span style="font-size: 12px; font-weight: normal; color: #605e5c;">※業務を止めず、いつでも開始できる柔軟モデル</span>
         </div>
 
         <table class="gantt-table">
           <thead>
             <tr>
               <th style="width: 38%; text-align: left;">行うこと（主要アクション）</th>
-              <th style="width: 11%;">月〜木</th>
-              <th style="width: 11%;">金曜 午前</th>
-              <th style="width: 11%;">金曜 午後</th>
-              <th style="width: 11%;" class="weekend-header">土曜 (休日)</th>
-              <th style="width: 11%;" class="weekend-header">日曜 (休日)</th>
-              <th style="width: 8%;">月曜</th>
-              <th style="width: 8%;">終わり次第〜</th>
+              <th style="width: 14%;">Step 1<br><small>事前確認</small></th>
+              <th style="width: 14%;">Step 2<br><small>エラー修正</small></th>
+              <th style="width: 18%;">Step 3<br><small>初回一括コピー</small></th>
+              <th style="width: 16%;">Step 4<br><small>差分同期</small></th>
+              <th style="width: 8%;">切り替え</th>
             </tr>
           </thead>
           <tbody>
@@ -639,8 +548,6 @@
               <td><div class="gantt-bar-wrapper"><div class="gantt-bar b1" style="width: 100%;">スキャン</div></div></td>
               <td></td>
               <td></td>
-              <td class="weekend-cell"></td>
-              <td class="weekend-cell"></td>
               <td></td>
               <td></td>
             </tr>
@@ -651,18 +558,17 @@
               <td></td>
               <td><div class="gantt-bar-wrapper"><div class="gantt-bar b1" style="width: 100%;">確認・修正</div></div></td>
               <td></td>
-              <td class="weekend-cell"></td>
-              <td class="weekend-cell"></td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td style="text-align: left; font-weight: 600;">
-                3. 初回一括コピー（金曜午後〜終わり次第）
+                3. 初回一括コピー（全自動転送）
               </td>
               <td></td>
               <td></td>
-              <td colspan="4"><div class="gantt-bar-wrapper"><div class="gantt-bar b2" style="width: 100%;">一括転送（金曜午後〜終わり次第）</div></div></td>
+              <td><div class="gantt-bar-wrapper"><div class="gantt-bar b2" style="width: 100%;">一括転送（バックグラウンド処理）</div></div></td>
+              <td></td>
               <td></td>
             </tr>
             <tr>
@@ -672,22 +578,20 @@
               <td></td>
               <td></td>
               <td></td>
-              <td class="weekend-cell"></td>
-              <td class="weekend-cell"></td>
               <td><div class="gantt-bar-wrapper"><div class="gantt-bar b3" style="width: 100%;">差分同期</div></div></td>
-              <td><div class="gantt-bar-wrapper"><div class="gantt-bar b3" style="width: 100%;">運用スタート</div></div></td>
+              <td><div class="gantt-bar-wrapper"><div class="gantt-bar b3" style="width: 100%;">本番運用</div></div></td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- 金曜午後スタート＆所要時間構想ボックス -->
-      <div class="friday-plan-box">
-        <div class="friday-plan-header">
-          <span>⚙️ 安全運用構想：所要時間の見通し（金曜午後スタート 転送モデル）</span>
+      <!-- 柔軟運用＆所要時間構想ボックス -->
+      <div class="plan-box">
+        <div class="plan-header">
+          <span>⚙️ 柔軟な運用設計：所要時間の目安</span>
         </div>
         <p style="font-size: 13.5px; color: var(--gray-100);">
-          事前スキャンを週前半に済ませ、<b>金曜午後に「一括転送」を開始</b>して動作確認を行った上で週末を迎える安全設計です。サーバー間転送のため、<b>PCをオフにしてもバックグラウンドで金〜月曜まで全自動処理</b>されます。
+          クラウド間での直接データ転送（サーバー間通信）のため、<b>PCをオフにしてもバックグラウンドで全自動処理</b>されます。普段の業務やPCの動作に負担をかけないため、<b>曜日や時間帯を問わずいつでも一括転送をスタート可能</b>です。
         </p>
 
         <h4 style="font-size: 14px; margin-top: 15px; margin-bottom: 8px; color: var(--primary-dark);">■ 移行作業にかかる所要時間の目安（スキャン＆本番一括転送）</h4>
@@ -732,7 +636,7 @@
           <div class="step-num">01</div>
           <div class="step-body">
             <h4><span class="env-tag dropbox">Dropbox</span>事前スキャン（チェックのみ実施）</h4>
-            <p>週前半にデータを変更せずMigration Managerでチェックのみ実行し、エラーの有無を確認します。</p>
+            <p>データを変更せずMigration Managerでチェックのみ実行し、修正が必要なエラーの有無を確認します。</p>
           </div>
         </div>
 
@@ -740,23 +644,23 @@
           <div class="step-num">02</div>
           <div class="step-body">
             <h4>エラー箇所の修正（※該当時のみ）</h4>
-            <p>事前スキャンでエラー（禁止文字等）が検出された場合のみ、金曜午前までに対象ファイルの修正を行います。</p>
+            <p>事前スキャンでエラー（禁止文字等）が検出された場合のみ、一括転送前に対象ファイルの修正を行います。</p>
           </div>
         </div>
 
         <div class="step-item">
           <div class="step-num">03</div>
           <div class="step-body">
-            <h4>初回一括コピー（金曜午後〜全自動）</h4>
-            <p>金曜午後にスタートし、土日〜月曜日にかけてクラウド間で全体データを一括転送します（自動処理のため作業不要）。</p>
+            <h4>初回一括コピー（全自動）</h4>
+            <p>クラウド間で全体データを一括転送します（自動処理のためPCの待機や作業は不要です）。</p>
           </div>
         </div>
 
         <div class="step-item">
           <div class="step-num">04</div>
           <div class="step-body">
-            <h4><span class="env-tag sharepoint">SharePoint</span>差分同期 ＆ 本番運用スタート（終わり次第〜）</h4>
-            <p>最終差分を反映完了後、終わり次第SharePointでの本番運用を開始します。</p>
+            <h4><span class="env-tag sharepoint">SharePoint</span>差分同期 ＆ 本番運用スタート</h4>
+            <p>最終の変更差分を反映完了後、終わり次第SharePointでの本番運用を開始します。</p>
           </div>
         </div>
       </div>
@@ -815,8 +719,8 @@
         </div>
       </details>
 
-      <div class="guideline-detail">
-        <div class="guideline-section-title">2. フォルダ階層の長さ制限（文字数オーバー対策）</div>
+      <div style="background: var(--gray-10); border: 1px solid var(--gray-30); border-radius: var(--radius-sm); padding: 25px; margin-bottom: 25px;">
+        <div style="font-size: 16px; font-weight: 700; color: var(--primary-dark); margin-bottom: 12px;">2. フォルダ階層の長さ制限（文字数オーバー対策）</div>
         <p style="font-size: 13.5px; color: var(--gray-100); margin-bottom: 12px;">
           SharePointでは、<b>「サイト名 ＋ フォルダ名 ＋ ファイル名」の合計長が218文字以上</b>になると保存・アクセス不可のエラーになります。
         </p>
@@ -860,49 +764,315 @@ function openSharePointGuide() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SharePointの基本使い方ガイド</title>
+  <title>【図解マニュアル】SharePoint の基本使い方ガイド</title>
   <style>
+    :root {
+      --primary: #0078d4;
+      --primary-dark: #004578;
+      --primary-light: #eff6fc;
+      --accent-green: #107c41;
+      --accent-green-bg: #dff6dd;
+      --gray-10: #faf9f8;
+      --gray-20: #f3f2f1;
+      --gray-30: #e1dfdd;
+      --gray-100: #323130;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+      --radius: 8px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      font-family: "Meiryo", sans-serif;
-      line-height: 1.8;
-      color: #323130;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "Meiryo", sans-serif;
+      line-height: 1.6;
+      color: var(--gray-100);
+      background-color: #f4f6f8;
+      padding: 40px 20px;
     }
-    h1, h2 { color: #004578; }
-    section {
-      margin: 24px 0;
-      padding: 20px;
-      background: #f3f8fc;
-      border-left: 4px solid #0078d4;
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: #ffffff;
+      padding: 32px 40px;
+    }
+
+    header h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    header p { font-size: 14px; opacity: 0.9; }
+
+    .content { padding: 36px 40px; }
+
+    .hero-box {
+      background: var(--primary-light);
+      border-left: 5px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .step-card {
+      background: #ffffff;
+      border: 1px solid var(--gray-30);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-card.recommended {
+      border: 2px solid var(--primary);
+      background: #fafcfe;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .step-badge {
+      background: #605e5c;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .step-badge.recommend-badge { background: var(--primary); }
+
+    .recommend-tag {
+      background: #ffaa00;
+      color: #000000;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 12px;
+    }
+
+    .step-title { font-size: 18px; font-weight: 700; color: var(--primary-dark); }
+    .step-desc { font-size: 14px; margin-bottom: 16px; color: var(--gray-100); }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .benefit-item {
+      background: #ffffff;
+      border: 1px solid var(--gray-30);
       border-radius: 6px;
+      padding: 14px;
+      font-size: 13px;
     }
+
+    .benefit-item h4 { color: var(--primary-dark); font-size: 14px; margin-bottom: 4px; }
+
+    .mockup-window {
+      background: #ffffff;
+      border: 1px solid var(--gray-30);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin: 16px 0;
+    }
+
+    .mockup-header {
+      background: var(--gray-20);
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: bold;
+      color: #605e5c;
+      border-bottom: 1px solid var(--gray-30);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mockup-dots { display: flex; gap: 5px; }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; background: #ccc; }
+    .mockup-body { padding: 16px; font-size: 13px; }
+
+    .file-tree-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--gray-10);
+      border-radius: 4px;
+    }
+
+    .file-name { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+    .status-tag { font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 12px; }
+    .status-ok { background: var(--accent-green-bg); color: var(--accent-green); }
+
+    .app-open-box {
+      background: #fff8e6;
+      border: 1px solid #ffe699;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-top: 14px;
+      font-size: 13px;
+    }
+
+    .qa-box {
+      background: var(--gray-10);
+      border: 1px solid var(--gray-30);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .qa-item { margin-bottom: 18px; }
+    .qa-item:last-child { margin-bottom: 0; }
+    .qa-q { font-weight: bold; color: var(--primary-dark); font-size: 14.5px; margin-bottom: 6px; }
+    .qa-a { font-size: 13.5px; color: var(--gray-100); padding-left: 12px; border-left: 3px solid var(--primary); }
+
+    .btn-close {
+      display: block;
+      width: 200px;
+      margin: 30px auto 0;
+      background: var(--primary);
+      color: #ffffff;
+      text-align: center;
+      padding: 12px 0;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,120,212,0.3);
+    }
+
+    .btn-close:hover { background: var(--primary-dark); }
   </style>
 </head>
 <body>
-  <h1>SharePointの基本使い方ガイド</h1>
-  <p>SharePointでチームのファイルを確認・共有する基本手順です。</p>
 
-  <section>
-    <h2>1. ファイルを開く</h2>
-    <p>案内されたSharePointサイトを開き、「ドキュメント」などのライブラリから目的のファイルを選びます。</p>
-  </section>
+<div class="container">
+  <header>
+    <h1>📘 SharePoint 基本使い方マニュアル</h1>
+    <p>Webブラウザを活用したスマートで安全な新しい働き方のご案内です。</p>
+  </header>
 
-  <section>
-    <h2>2. ファイルを共有する</h2>
-    <p>ファイルの「共有」から共有相手を指定します。共有前に、相手とアクセス権限が正しいことを確認してください。</p>
-  </section>
+  <div class="content">
 
-  <section>
-    <h2>3. PCと同期する</h2>
-    <p>SharePointのドキュメント画面で「同期」を選ぶと、OneDriveアプリを通じてPCのエクスプローラーからファイルを扱えます。</p>
-  </section>
+    <div class="hero-box">
+      <b>✨ 今後の推奨スタイル：Webブラウザでの編集・リアルタイム共有</b><br>
+      SharePointの真価を発揮するため、<b>「Webブラウザ（Chrome / Edge）で開いて作業する運用」</b>を推奨しています。複数人での同時編集やファイルの先祖返り防止に絶大な効果があります。
+    </div>
 
-  <section>
-    <h2>4. 困ったとき</h2>
-    <p>ファイルが見つからない、開けない場合は、サイトへのアクセス権限やOneDriveの同期状態を確認し、管理者にお問い合わせください。</p>
-  </section>
+    <!-- 1. Webブラウザからアクセス ＆ 複数人で同時編集【推進スタイル】 -->
+    <div class="step-card recommended">
+      <div class="step-header">
+        <span class="step-badge recommend-badge">方法 01</span>
+        <span class="recommend-tag">⭐ 組織の標準・おすすめ運用</span>
+        <h2 class="step-title" style="width: 100%; margin-top: 4px;">Webブラウザからアクセス ＆ 複数人でリアルタイム同時編集</h2>
+      </div>
+      <p class="step-desc">
+        Office 365ポータル（https://office.com）やチーム共有のリンクからブラウザでアクセスするだけで、PCにアプリが入っていなくてもすぐに最新ファイルを編集できます。
+      </p>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h4>⚡ 上書き保存は一切不要</h4>
+          <p>編集した内容は全自動でリアルタイム保存されます。保存忘れやPCフリーズによるデータ消失を防ぎます。</p>
+        </div>
+        <div class="benefit-item">
+          <h4>👥 チームで同時リアルタイム編集</h4>
+          <p>同じWord/Excelを複数人で同時に編集可能。「他の人が開いていてロックされている」ストレスがゼロになります。</p>
+        </div>
+        <div class="benefit-item">
+          <h4>📱 どこからでも（スマホ/タブレットOK）</h4>
+          <p>外出先や自宅からでもブラウザさえあれば安全に閲覧・修正。場所や端末を選ばず作業できます。</p>
+        </div>
+        <div class="benefit-item">
+          <h4>🕒 過去の状態へ一瞬で復元</h4>
+          <p>万が一誤って修正・削除してしまっても「バージョン履歴」機能から過去の任意の状態に一発で戻せます。</p>
+        </div>
+      </div>
+
+      <div class="app-open-box">
+        <b>💡 マクロ（VBA）を使う場合や、慣れたPCアプリで編集したいとき</b><br>
+        Webブラウザ画面上部のメニューにある <b>「デスクトップ アプリで開く」</b> を押すと、即座にPC上のExcel/Wordアプリが起動して直接編集できます。
+      </div>
+    </div>
+
+    <!-- 2. パソコン（エクスプローラー）で使う -->
+    <div class="step-card">
+      <div class="step-header">
+        <span class="step-badge">方法 02</span>
+        <h2 class="step-title">パソコン（エクスプローラー）で使う【従来通りの操作】</h2>
+      </div>
+      <p class="step-desc">
+        ブラウザで「同期」ボタンを一回押すと、PCの画面左側に「SharePoint」アイコンが追加され、従来通りエクスプローラー上で直接ファイルを開くことも可能です。
+      </p>
+
+      <div class="mockup-window">
+        <div class="mockup-header">
+          <div class="mockup-dots"><div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div></div>
+          <span>📁 エクスプローラー画面イメージ（PC内での表示状態）</span>
+        </div>
+        <div class="mockup-body">
+          <div class="file-tree-item">
+            <span class="file-name">🏢 SharePoint - 共有フォルダ</span>
+            <span class="status-tag status-ok">同期アクティブ</span>
+          </div>
+          <div class="file-tree-item" style="margin-left: 15px;">
+            <span class="file-name">📄 2026年度_企画提案書.xlsx</span>
+            <span class="status-tag status-ok">✔ PCに同期済み</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 困ったときのQ&A -->
+    <div class="qa-box">
+      <h3 style="font-size: 16px; color: var(--primary-dark); margin-bottom: 16px; display: flex; align-items: center; gap: 6px;">
+        ❓ 困ったときのQ＆A（復元・トラブル対応）
+      </h3>
+
+      <div class="qa-item">
+        <div class="qa-q">Q. 誤ってデータを書き換えてしまった（過去の状態に戻したい）場合は？</div>
+        <div class="qa-a">
+          Dropboxの変更履歴と同様に一瞬で復元できます。<br>
+          対象のファイルを右クリックして <b>「バージョン履歴」</b> を選択してください。過去の保存時点が一覧で表示されますので、戻したい日時の横にある「復元」をクリックするだけで元通りになります。
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">Q. ファイルやフォルダを誤って削除してしまった場合は？</div>
+        <div class="qa-a">
+          SharePoint画面の左側メニューにある <b>「ごみ箱」</b> を開いてください。<br>
+          削除されたファイルの一覧が表示されますので、復元したい項目にチェックを入れて画面上部の「復元」を押せば元の場所に戻ります。
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">Q. ブラウザとデスクトップアプリ（Excel等）どちらを使えばいいですか？</div>
+        <div class="qa-a">日常の確認・閲覧・入力・同時編集は<b>「ブラウザ版」が最も安全でスムーズ</b>です。高度なマクロVBAの実行や特殊なレイアウト編集時のみ「デスクトップアプリで開く」をご利用ください。</div>
+      </div>
+    </div>
+
+    <button class="btn-close" onclick="window.close()">マニュアルを閉じる</button>
+
+  </div>
+</div>
+
 </body>
 </html>`);
   guideWindow.document.close();
